@@ -1,0 +1,23 @@
+[
+  {"model": "survey_app.surveyanswers", "pk": 1, "fields": {"childAge": 4, "childGender": 1, "parentAnswerArray": "12131112212311231"}},
+  {"model": "survey_app.surveyanswers", "pk": 2, "fields": {"childAge": 5, "childGender": 9, "parentAnswerArray": "111112311231"}},
+  {"model": "survey_app.surveyanswers", "pk": 3, "fields": {"childAge": 7, "childGender": 0, "parentAnswerArray": "111112-3-11231"}},
+  {"model": "survey_app.surveyanswers", "pk": 4, "fields": {"childAge": 2, "childGender": 1, "parentAnswerArray": "-111-2-2-1022"}},
+  {"model": "survey_app.parentquestions", "pk": 1, "fields":
+  { "title": "خودآگاهی هیجانی",
+        "value": "Emotional_self-awareness1",
+        "text": "بیشتر اوقات فرزندم متوجه نمیشود چه احساسی دارد"
+  }},
+  {"model": "survey_app.parentquestions", "pk": 2, "fields":
+  { "title": "خودآگاهی هیجانی",
+        "value": "Emotional_self-awareness2",
+        "text": "وقتی یکی از دوستانش ناراحت باشد او متوجه نمیشود."
+  }},
+  {"model": "survey_app.parentquestions", "pk": 3, "fields":
+  {
+        "title": "خودآگاهی هیجانی",
+        "value": "Emotional_self-awareness3",
+        "text": "دقيقا مى داند چه احساسى دارد."
+  }}
+
+]

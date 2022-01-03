@@ -77,6 +77,7 @@ export default {
   methods: {
     onNext() {
       this.$emit("goNext", this.question.id);
+      // console.log('Next:', this.question)
     },
     onPrev() {
       this.$emit("goPrev", this.question.id);

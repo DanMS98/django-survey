@@ -1,8 +1,12 @@
 <template>
   <div class="box home">
-    <input class="input" v-model="childAge" placeholder="سن کودک خود را وارد کنید" /><br>
+    <input
+      class="input"
+      v-model="childAge"
+      placeholder="سن کودک خود را وارد کنید"
+    /><br />
     <select class="input" v-model="childGender">
-      <option disabled value="">لطفا جنسیت کودک خود را امتخاب کنید</option>
+      <option disabled value="">لطفا جنسیت کودک خود را انتخاب کنید</option>
       <option>پسر</option>
       <option>دختر</option>
       <option>نامعلوم</option>
@@ -19,7 +23,8 @@
 
 <script>
 import Survey from "../components/Survey.vue";
-// import jsonData from "../json/survey.json"
+import axios from "axios";
+import { getAPI } from "../axios-api";
 
 export default {
   name: "Home",
@@ -30,7 +35,7 @@ export default {
   methods: {
     showNextQuestion(id) {
       console.log(id);
-      if (id == 1) {
+      if (id == 100) {
         this.survey[id].isAnswered = true;
         this.survey[id].isSelected = false;
 
@@ -38,20 +43,62 @@ export default {
         this.survey.forEach((element) => {
           this.parentChoices.push(element.choice);
         });
+
+        if (this.childGender == "پسر") {
+          this.childGenderCode = 1;
+        } else if (this.childGender == "دختر") {
+          this.childGenderCode = 2;
+        } else {
+          this.childGenderCode = 0;
+        }
+
         let finalString = this.parentChoices.toString();
+        console.log("Gender: ", this.childGender);
+        console.log("Gender Code: ", this.childGenderCode);
+        console.log("Age: ", this.childAge);
         console.log("choices are JSON: ", JSON.stringify(this.parentChoices));
         console.log("choices are STRING:", finalString);
+
+        let data = {
+          childAge: this.childAge,
+          childGender: this.childGenderCode,
+          parentAnswerArray: "-111-2-2-1022",
+        };
+
+        getAPI
+          .post("surveyanswers/", data)
+          .then((response) => console.log(response))
+          .catch((error) => {
+            console.log(error);
+          });
+
+        // axios({
+        //   method: "post",
+        //   url: "http//127.0.0.1:8000/surveyanswers/",
+        //   data: {
+        //     childAge: this.childAge,
+        //     childGender: this.childGenderCode,
+        //     parentAnswerArray: "-111-2-2-1022",
+        //   },
+        // })
+        //   .then((response) => {
+        //     console.log(response);
+        //   })
+        //   .catch((error) => {
+        //     console.log(error);
+        //   });
       } else {
-        this.survey[id].isAnswered = true;
-        this.survey[id].isSelected = false;
-        this.survey[id + 1].isSelected = true;
+        this.survey[id - 1].isAnswered = true;
+        this.survey[id - 1].isSelected = false;
+        // console.log("HEREEE:", id)
+        this.survey[id].isSelected = true;
       }
     },
     showPrevQuestion(id) {
       if (id != 0) {
-        console.log(id);
-        this.survey[id].isSelected = false;
-        this.survey[id - 1].isSelected = true;
+        console.log("id:",id - 1);
+        this.survey[id - 1].isSelected = false;
+        this.survey[id - 2].isSelected = true;
       } else {
         alert("سوال قبلی ای وجود ندارد");
       }
@@ -61,32 +108,52 @@ export default {
   data() {
     return {
       survey: [],
+      backendSurvey: [],
       parentChoices: [],
       childAge: "",
-      childGender:"",
+      childGender: "",
+      childGenderCode: "",
     };
   },
 
-  created() {
-    this.survey = [
-      {
-        id: 0,
-        title: "خودآگاهی هیجانی",
-        value: "Emotional_self-awareness1",
-        text: "بیشتر اوقات فرزندم متوجه نمیشود چه احساسی دارد‬",
-        isAnswered: false,
-        choice: "",
-        isSelected: true,
-      },
-      {
-        id: 1,
-        title: "خودآگاهی هیجانی",
-        value: "Emotional_self-awareness2",
-        text: "وقتی یکی از دوستانش ناراحت باشد او متوجه نمیشود.",
-        isAnswered: false,
-        choice: "",
-        isSelected: false,
-      },
+  async created() {
+    await getAPI
+      .get("parent-questions/")
+      .then((response) => {
+        this.survey = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    this.survey.forEach((element) => {
+      element.isAnswered = false;
+      element.isSelected = false;
+      element.choice = "";
+
+      console.log(element);
+    });
+    this.survey[0].isSelected = true;
+
+    // this.survey = [
+    //   {
+    //     id: 0,
+    //     title: "خودآگاهی هیجانی",
+    //     value: "Emotional_self-awareness1",
+    //     text: "بیشتر اوقات فرزندم متوجه نمیشود چه احساسی دارد‬",
+    //     isAnswered: false,
+    //     choice: "",
+    //     isSelected: true,
+    //   },
+    //   {
+    //     id: 1,
+    //     title: "خودآگاهی هیجانی",
+    //     value: "Emotional_self-awareness2",
+    //     text: "وقتی یکی از دوستانش ناراحت باشد او متوجه نمیشود.",
+    //     isAnswered: false,
+    //     choice: "",
+    //     isSelected: false,
+    //   },
       // {
       //   id: 2,
       //   title: "خودآگاهی هیجانی",
@@ -672,16 +739,16 @@ export default {
       //   choice: "",
       //   isSelected: false,
       // },
-      {
-        value: "",
-        text: "",
-        id: 66,
-        title: "",
-        isAnswered: false,
-        choice: "",
-        isSelected: false,
-      },
-    ];
+      // {
+      //   value: "",
+      //   text: "",
+      //   id: 66,
+      //   title: "",
+      //   isAnswered: false,
+      //   choice: "",
+      //   isSelected: false,
+      // },
+    // ];
   },
 };
 </script>

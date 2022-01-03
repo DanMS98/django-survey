@@ -10,3 +10,9 @@ class SurveyAnswers(models.Model):
 
     def __str__(self):
         return self.parentAnswerArray
+
+
+class ParentQuestions(models.Model):
+    title = models.CharField(max_length=50)
+    value = models.CharField(max_length=50)
+    text = models.TextField()
