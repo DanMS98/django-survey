@@ -76,8 +76,14 @@ export default {
   },
   methods: {
     onNext() {
-      this.$emit("goNext", this.question.id);
-      // console.log('Next:', this.question)
+
+      if(this.question.choice != ""){
+        console.log('choice is: ',this.question.choice)
+        this.$emit("goNext", this.question.id);
+      } else {
+        alert('لطفا یک گزینه زا انتخاب نمایید')
+      }
+      
     },
     onPrev() {
       this.$emit("goPrev", this.question.id);

@@ -10,6 +10,7 @@
 
 <script>
 import Survey_child from "../components/Survey_child.vue";
+import { getAPI } from "../axios-api";
 
 export default {
   name: "About",
@@ -21,6 +22,7 @@ export default {
   data() {
     return {
       survey_child: [],
+      response: [],
     };
   },
 
@@ -39,119 +41,49 @@ export default {
     },
   },
 
-  created() {
-    this.survey_child = [
-      {
-        id: 0,
-        isSelected: true,
-        isAnswered: false,
-        choice: "",
-        title: "مقیاس مدیریت هیجانات(تنظیم هیجانات)",
-        text: " ﺍﻣﺴﺎﻝ ﺑﻪ ﺧﺎﻃﺮ ﻛﺮﻭﻧﺎ ﻣﺎﻣـﺎﻥ ﻭ ﺑﺎﺑـﺎ ﻧﻤﻴﺘـﻮﻧﻦ ﺩﻭﺳـﺘﺎﺕ ﺭﻭ ﺑـﺮﺍﻱ ﺟﺸـﻦ ﺗﻮﻟـﺪﺕ ﺩﻋـﻮﺕ ﻛـﻨﻦ. ﺣـﺎﻻ ﻗـﺮﺍﺭﻩ ﺳـﻪ ﺗـﺎﻳﻲ ﺑـﺎ ﻫﻢ ﺩﻳﮕﻪ ﺷﻤﻊ ﻓﻮﺕ ﻛﻨﻴﻦ ﻭ ﻛﻴﻚ ﺑﺨﻮﺭﻳﻦ. ﺗﻮ ﭼﻲ ﻛﺎﺭ ﻣﻴﻜﻨﻲ؟",
-        choices: [
-          {
-            value: 1,
-            text: " ﻧﺎﺭﺍﺣﺖ ﻣﻴﺸﻢ ﻭﻟﻲ ﻛﻴﻚ ﺭﺍ ﻣﻲ ﺧﻮﺭﻡ",
-          },
-          {
-            text: "ﺑﺎ ﻣﺎﻣﺎﻥ ﻭ ﺑﺎﺑﺎﻡ ﺷﻤﻊ ﻓﻮﺕ ﻣﻴﻜﻨﻢ ﻭ ﻛﻴﻚ ﻣﻴﺨﻮﺭﻡ",
-            value: 2,
-          },
-          {
-            text: "ﺑﺎﻫﺎﺷﻮﻥ ﻗﻬﺮ ﻣﻲ ﻛﻨﻢ",
-            value: 0,
-          },
-        ],
-      },
-      {
-        id: 1,
+  async created() {
+    await getAPI
+      .get("child-questions/")
+      .then((response) => {
+        this.response = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      
+    this.response.forEach((element) => {
+      let survey_element = {
+        id: element.id,
         isSelected: false,
         isAnswered: false,
+        text: element.text,
+        title: element.title,
         choice: "",
-        title: "مقیاس مدیریت هیجانات(تنظیم هیجانات)",
-        text: " ﺍﮔﻪ ﻳﻪ ﺭﻭﺯ ﺣﻮﺻﻠﻪ ﺑﺎﺯﻱ ﻧﺪﺍﺷﺘﻪ ﺑﺎﺷﻲ ﻭﻟﻲ ﺩﻭﺳﺘﺖ ﺑﻴﺎﺩ ﺧﻮﻧﻪ ﺗﻮﻥ ﻭ ﺑﺨﻮﺍﺩ ﺑﺎ ﺗﻮ ﺑﺎﺯﻱ ﻛﻨﻪ ﺗﻮ ﭼﻴﻜﺎﺭ ﻣﻴﻜﻨﻲ؟ ",
         choices: [
           {
-            value: 0,
-            text: "ﺑﻪ ﺩﻭﺳﺘﻢ ﻣﻴﮕﻢ ﺑﺮﻩ ﺧﻮﻧﺸﻮﻥ ﭼﻮﻥ ﻣﻦ ﺣﻮﺻﻠﻪ ﻧﺪﺍﺭﻡ",
+            value: element.value0,
+            text: element.answer0,
           },
           {
-            text: " ﭼﻮﻥ ﺩﻭﺳﺘﻢ ﺩﻟﺶ ﻣﻴﺨﻮﺍﺩ ﺑﺎ ﻣﻦ ﺑﺎﺯﻱ ﻛﻨﻪ ﻣﻨﻢ ﺑﺎﻫﺎﺵ ﺑﺎﺯﻱ ﻣﻴﻜﻨﻢ",
-            value: 2,
+            value: element.value1,
+            text: element.answer1,
           },
           {
-            text: "ﺑﻬﺶ ﻣﻲ ﮔﻢ ﺗﻨﻬﺎﻳﻲ ﺑﺎ ﺍﺳﺒﺎﺏ ﺑﺎﺯﻱ ﻫﺎﻱ ﻣﻦ ﺑﺎﺯﻱ ﻛﻨﻪ",
-            value: 1,
+            value: element.value2,
+            text: element.answer2,
           },
         ],
-      },
-      {
-        id: 2,
-        isSelected: false,
-        isAnswered: false,
-        choice: "",
-        title: "مقیاس مدیریت هیجانات(تنظیم هیجانات)",
-        text: " ﺍﮔﻪ ﻳﻪ ﺭﻭﺯ ﺣﻮﺻﻠﻪ ﺑﺎﺯﻱ ﻧﺪﺍﺷﺘﻪ ﺑﺎﺷﻲ ﻭﻟﻲ ﺩﻭﺳﺘﺖ ﺑﻴﺎﺩ ﺧﻮﻧﻪ ﺗﻮﻥ ﻭ ﺑﺨﻮﺍﺩ ﺑﺎ ﺗﻮ ﺑﺎﺯﻱ ﻛﻨﻪ ﺗﻮ ﭼﻴﻜﺎﺭ ﻣﻴﻜﻨﻲ؟ ",
-        choices: [
-          {
-            value: 0,
-            text: "ﺑﻪ ﺩﻭﺳﺘﻢ ﻣﻴﮕﻢ ﺑﺮﻩ ﺧﻮﻧﺸﻮﻥ ﭼﻮﻥ ﻣﻦ ﺣﻮﺻﻠﻪ ﻧﺪﺍﺭﻡ",
-          },
-          {
-            text: " ﭼﻮﻥ ﺩﻭﺳﺘﻢ ﺩﻟﺶ ﻣﻴﺨﻮﺍﺩ ﺑﺎ ﻣﻦ ﺑﺎﺯﻱ ﻛﻨﻪ ﻣﻨﻢ ﺑﺎﻫﺎﺵ ﺑﺎﺯﻱ ﻣﻴﻜﻨﻢ",
-            value: 2,
-          },
-          {
-            text: "ﺑﻬﺶ ﻣﻲ ﮔﻢ ﺗﻨﻬﺎﻳﻲ ﺑﺎ ﺍﺳﺒﺎﺏ ﺑﺎﺯﻱ ﻫﺎﻱ ﻣﻦ ﺑﺎﺯﻱ ﻛﻨﻪ",
-            value: 1,
-          },
-        ],
-      },
-      {
-        id: 3,
-        isSelected: false,
-        isAnswered: false,
-        choice: "",
-        title: "مقیاس مدیریت هیجانات(تنظیم هیجانات)",
-        text: " ﺍﮔﻪ ﻳﻪ ﺭﻭﺯ ﺍﺯ ﺩﻳﻜﺘﻪ ﻧﻤﺮﻩ ﻛﻢ ﺑﮕﻴﺮﻱ ﭼﻲ ﻛﺎﺭ ﻣﻴﻜﻨﻲ؟ ",
-        choices: [
-          {
-            value: 0,
-            text: "ﺑﺮﺍﻡ ﻣﻬﻢ ﻧﻴﺴﺖ ﻛﻪ ﻧﻤﺮﻩ ﺍﻡ ﻛﻢ ﺷﺪﻩ",
-          },
-          {
-            text: "ﺗﻼﺵ ﻣﻴﻜﻨﻢ ﺗﺎ ﺩﻓﻌﻪ ﺑﻌﺪ ﻧﻤﺮﻩ ﺍﻡ ﺧﻮﺏ ﺑﺸﻪ",
-            value: 2,
-          },
-          {
-            text: "ﻏﻤﮕﻴﻦ ﻭ ﻧﺎﺭﺍﺣﺖ ﻣﻴﺸﻢ ﻭ ﮔﺮﻳﻪ ﻣﻲ ﻛﻨﻢ",
-            value: 1,
-          },
-        ],
-      },
-      {
-        id: 4,
-        isSelected: false,
-        isAnswered: false,
-        choice: "",
-        title: "مقیاس مدیریت هیجانات(تنظیم هیجانات)",
-        text: " ﻓﻜـﺮ ﻛـﻦ ﻣﺎﻣـﺎﻥ ﺑـﺮﺍﺕ ﻳـﻪ ﺑﺴـﺘﻨﻲ ﺧﻮﺷـﻤﺰﻩ ﺧﺮﻳـﺪﻩ. ﻭﻟـﻲ ﻳﻬـﻮ ﺑﺴـﺘﻨﻴﺖ ﻣـﻲ ﺍﻓﺘـﻪ ﺯﻣـﻴﻦ، ﻛﺜﻴـﻒ ﻣﻴﺸـﻪ ﻭ ﺩﻳﮕـﻪ ﻧﻤﻴﺸﻪ ﺑﺨﻮﺭﻳﺶ. ﺗﻮ ﭼﻲ ﻛﺎﺭ ﻣﻴﻜﻨﻲ؟ ",
-        choices: [
-          {
-            value: 2,
-            text: "ﻧﺎﺭﺍﺣﺖ ﻣﻴﺸﻢ ﻭﻟﻲ ﺻﺒﺮ ﻣﻴﻜﻨﻢ ﺗﺎ ﻳﻪ ﺭﻭﺯ ﺩﻳﮕﻪ ﻣﺎﻣﺎﻥ ﺑﺎﺯ ﺑﺮﺍﻡ ﺑﺴﺘﻨﻲ ﺑﺨﺮه",
-          },
-          {
-            text: " ﮔﺮﻳﻪ ﻣﻲ ﻛﻨﻢ ﺗﺎ ﻣﺎﻣﺎﻥ ﺑﺎﺯ ﺑﺮﺍﻡ ﺑﺴﺘﻨﻲ ﻧﺨﺮﻩ ﺳﺎﻛﺖ ﻧﻤﻲ ﺷﻢ",
-            value: 0,
-          },
-          {
-            text: "ﻧﺎﺭﺍﺣﺖ ﻣﻴﺸﻢ ﻭ ﺍﺯ ﻣﺎﻣﺎﻧﻢ ﻣﻲ ﭘﺮﺳﻢ ﻣﻴﺸﻪ ﺩﻭﺑﺎﺭﻩ ﺑﺮﺍﻡ ﺑﺴﺘﻨﻲ ﺑﺨﺮﻩ",
-            value: 1,
-          },
-        ],
-      },
-    ];
+      };
+      console.log("survey_element", survey_element);
+      this.survey_child.push(survey_element);
+      element.isAnswered = false;
+      element.isSelected = false;
+      console.log(element.answer0);
+
+      element.choice = "";
+    });
+    this.survey_child[0].isSelected = true;
+    
   },
 };
 </script>
