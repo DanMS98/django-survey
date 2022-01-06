@@ -6,7 +6,8 @@ from rest_framework import generics, status
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import SurveyAnswers, ParentQuestions, ChildQuestion, ChildSurveyAnswers
-from .serializers import SurveyAnswersSerializer, ParentQuestionsSerializer, ChildQuestionSerializer, ChildSurveyAnswersSerializer
+from .serializers import SurveyAnswersSerializer, ParentQuestionsSerializer, ChildQuestionSerializer,\
+    ChildSurveyAnswersSerializer
 
 
 class ParentQuestionsView(generics.ListAPIView):
@@ -30,6 +31,7 @@ def childSurveyAnswersListView(request):
     elif request.method == 'POST':
         data = JSONParser().parse(request)
         serializer = ChildSurveyAnswersSerializer(data=data)
+        print("data:", data)
 
         if serializer.is_valid():
             serializer.save()

@@ -15,6 +15,7 @@
       @goNext="showNextQuestion"
       :survey="survey"
       @goPrev="showPrevQuestion"
+      @finishSurvey="finishSurvey"
     />
   </div>
 </template>
@@ -33,50 +34,47 @@ export default {
   },
 
   methods: {
-    showNextQuestion(id) {
-      console.log(id);
-      if (id == 100) {
-        this.survey[id].isAnswered = true;
-        this.survey[id].isSelected = false;
+    finishSurvey() {
+      this.parentChoices = [];
+      this.survey.forEach((element) => {
+        this.parentChoices.push(element.choice);
+      });
 
-        this.parentChoices = [];
-        this.survey.forEach((element) => {
-          this.parentChoices.push(element.choice);
-        });
-
-        if (this.childGender == "پسر") {
-          this.childGenderCode = 1;
-        } else if (this.childGender == "دختر") {
-          this.childGenderCode = 2;
-        } else {
-          this.childGenderCode = 0;
-        }
-
-        let finalString = this.parentChoices.toString();
-        console.log("Gender: ", this.childGender);
-        console.log("Gender Code: ", this.childGenderCode);
-        console.log("Age: ", this.childAge);
-        console.log("choices are JSON: ", JSON.stringify(this.parentChoices));
-        console.log("choices are STRING:", finalString);
-
-        let data = {
-          childAge: this.childAge,
-          childGender: this.childGenderCode,
-          parentAnswerArray: "-111-2-2-1022",
-        };
-
-        getAPI
-          .post("surveyanswers/", data)
-          .then((response) => console.log(response))
-          .catch((error) => {
-            console.log(error);
-          });
+      if (this.childGender == "پسر") {
+        this.childGenderCode = 1;
+      } else if (this.childGender == "دختر") {
+        this.childGenderCode = 2;
       } else {
-        this.survey[id - 1].isAnswered = true;
-        this.survey[id - 1].isSelected = false;
-
-        this.survey[id].isSelected = true;
+        this.childGenderCode = 0;
       }
+
+      var data = {
+        childAge: parseInt(this.childAge),
+        childGender: parseInt(this.childGenderCode),
+        parentAnswerArray: this.parentChoices.toString(),
+      };
+      let finalString = this.parentChoices.toString();
+      console.log("Gender: ", this.childGender);
+      console.log("Gender Code: ", this.childGenderCode);
+      console.log("Age: ", this.childAge);
+      console.log("choices are JSON: ", JSON.stringify(this.parentChoices));
+      console.log("choices are STRING:", finalString);
+      console.log(data);
+      getAPI
+        .post("surveyanswers/", data)
+        .then((response) => console.log(response))
+        .catch((error) => {
+          console.log(error.response.status);
+          if (error.response.status == 400) {
+            alert("لطفا سن و جنسیت کودک خود را وارد نمایید");
+          }
+        });
+    },
+
+    showNextQuestion(id) {
+      this.survey[id - 1].isAnswered = true;
+      this.survey[id - 1].isSelected = false;
+      this.survey[id].isSelected = true;
     },
     showPrevQuestion(id) {
       if (id - 1 != 0) {
@@ -91,6 +89,8 @@ export default {
 
   data() {
     return {
+      parentChoices: [],
+      test: [],
       survey: [],
       backendSurvey: [],
       parentChoices: [],
@@ -113,9 +113,35 @@ export default {
     this.survey.forEach((element) => {
       element.isAnswered = false;
       element.isSelected = false;
+      element.isLast = false;
       element.choice = "";
     });
     this.survey[0].isSelected = true;
+    this.survey[this.survey.length - 1].isLast = true;
+
+    this.test = [
+      {
+        id: 1,
+        title: "خودآگاهی هیجانی",
+        value: "Emotional_self-awareness1",
+        text: "بیشتر اوقات فرزندم متوجه نمیشود چه احساسی دارد‬",
+        isAnswered: false,
+        choice: "",
+        isLast: false,
+        isSelected: true,
+      },
+      {
+        id: 2,
+        title: "خودآگاهی هیجانی",
+        value: "Emotional_self-awareness2",
+        text: "وقتی یکی از دوستانش ناراحت باشد او متوجه نمیشود.",
+        isAnswered: false,
+        choice: "",
+        isLast: false,
+        isSelected: false,
+      },
+    ];
+    this.test[this.test.length - 1].isLast = true;
   },
 };
 </script>

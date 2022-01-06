@@ -32,10 +32,13 @@
         </li>
       </ul>
       <div class="buttons">
-        <button v-if="question.id != 0" @click="onPrev" class="previous">
+        <button v-if="question.id != 0" @click="onPrev" class="button is-danger">
           قبلی
         </button>
-        <button @click="onNext" class="next">بعدی</button>
+        <button @click="onNext" class="button is-primary">
+          <div v-if="!question.isLast">بعدی</div> 
+          <div v-else>پایان</div>
+          </button>
       </div>
     </div>
   </div>
@@ -55,11 +58,14 @@ export default {
 
   methods: {
     onNext() {
+      if (this.question.isLast) {
+        this.$emit("finishSurvey");
+      }
       if(this.question.choice != ""){
         console.log(this.question.choices[this.question.choice].value);
         this.$emit("goNext", this.question.id);
       } else {
-        alert('لطفا یک گزینه زا انتخاب نمایید')
+        alert('لطفا یک گزینه را انتخاب نمایید')
       }
       
     },

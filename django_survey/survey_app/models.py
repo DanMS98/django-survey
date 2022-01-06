@@ -6,7 +6,7 @@ class SurveyAnswers(models.Model):
     childGender = models.IntegerField(choices=[
         (0, 'UNKNOWN'), (1, 'MALE'), (2, 'FEMALE'), (9, 'NOT_APPLICABLE')
     ])
-    parentAnswerArray = models.CharField(max_length=100)
+    parentAnswerArray = models.CharField(max_length=150)
 
     def __str__(self):
         return self.parentAnswerArray
@@ -18,7 +18,7 @@ class ChildSurveyAnswers(models.Model):
     score = models.IntegerField()
 
     def __str__(self):
-        return self.score
+        return str(self.score)
 
 
 class ParentQuestions(models.Model):
