@@ -1,7 +1,11 @@
 <template>
   <div>
-    <button @click="this.playSound(this.question.audio);" class="button is-info is-small">خواندن سوال</button>
-    <br /><br />
+    <av-waveform
+      :audio-src=question.audio
+    ></av-waveform>
+    
+    <!-- <button @click="this.playSound(this.question.audio);" class="button is-info is-small">خواندن سوال</button> -->
+    <!-- <br /><br /> -->
     {{ question.text }}
     <div class="formClass">
       <ul class="likert">
@@ -63,7 +67,7 @@ export default {
   },
 
   mounted() {
-    this.playSound(this.question.audio);
+    // this.playSound(this.question.audio);
   },
 
   methods: {
@@ -71,6 +75,7 @@ export default {
       if (sound) {
         var audio = new Audio(sound);
         audio.play();
+        console.log(audio.duration)
       }
     },
 

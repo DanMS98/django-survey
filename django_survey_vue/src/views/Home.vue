@@ -1,11 +1,6 @@
 <template>
   <div class="box home">
-    <button
-      class="btn btn-primary btn-sm"
-      @click.prevent="playSound('./31.m4a')"
-    >
-      <span class="fa fa-play-circle-o">voice</span>
-    </button>
+
     <input
       class="input"
       v-model="childAge"
@@ -32,7 +27,6 @@
 import Survey from "../components/Survey.vue";
 import axios from "axios";
 import { getAPI } from "../axios-api";
-import sound from "../components/31.mp3";
 
 export default {
   name: "Home",
@@ -125,8 +119,6 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-
-    this.audio = new Audio("../Sunflower.mp3");
 
     this.survey.forEach((element) => {
       element.isAnswered = false;
