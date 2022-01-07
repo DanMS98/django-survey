@@ -37,5 +37,7 @@ class ChildQuestion(models.Model):
     answer1 = models.CharField(max_length=150)
     value2 = models.IntegerField()
     answer2 = models.CharField(max_length=150)
+    """"------------------------------------------"""
+    audio = models.FileField(upload_to='uploads/', blank=True, null=True)
 
 

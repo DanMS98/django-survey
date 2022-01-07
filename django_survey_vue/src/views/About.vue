@@ -86,6 +86,7 @@ export default {
         text: element.text,
         title: element.title,
         choice: "",
+        audio: element.audio,
         choices: [
           {
             value: element.value0,
@@ -107,7 +108,7 @@ export default {
       element.isSelected = false;
       element.choice = "";
     });
-
+    console.log("survey_child", this.survey_child)
     // this.survey_child = [
     //   {
     //     id: 0,

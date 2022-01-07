@@ -1,5 +1,7 @@
 <template>
   <div>
+    <button @click="this.playSound(this.question.audio);" class="button is-info is-small">خواندن سوال</button>
+    <br /><br />
     {{ question.text }}
     <div class="formClass">
       <ul class="likert">
@@ -10,7 +12,7 @@
             value="0"
             v-model="question.choice"
           />
-          <label>{{ question.choices[0].text }}</label>
+          <label> 1_ {{ question.choices[0].text }}</label>
         </li>
         <li>
           <input
@@ -19,7 +21,7 @@
             value="1"
             v-model="question.choice"
           />
-          <label>{{ question.choices[1].text }}</label>
+          <label> 2_ {{ question.choices[1].text }}</label>
         </li>
         <li>
           <input
@@ -28,17 +30,21 @@
             value="2"
             v-model="question.choice"
           />
-          <label>{{ question.choices[2].text }}</label>
+          <label> 3_ {{ question.choices[2].text }}</label>
         </li>
       </ul>
       <div class="buttons">
-        <button v-if="question.id != 0" @click="onPrev" class="button is-danger">
+        <button
+          v-if="question.id != 0"
+          @click="onPrev"
+          class="button is-danger"
+        >
           قبلی
         </button>
         <button @click="onNext" class="button is-primary">
-          <div v-if="!question.isLast">بعدی</div> 
+          <div v-if="!question.isLast">بعدی</div>
           <div v-else>پایان</div>
-          </button>
+        </button>
       </div>
     </div>
   </div>
@@ -56,18 +62,28 @@ export default {
     return;
   },
 
+  mounted() {
+    this.playSound(this.question.audio);
+  },
+
   methods: {
+    playSound(sound) {
+      if (sound) {
+        var audio = new Audio(sound);
+        audio.play();
+      }
+    },
+
     onNext() {
       if (this.question.isLast) {
         this.$emit("finishSurvey");
       }
-      if(this.question.choice != ""){
+      if (this.question.choice != "") {
         console.log(this.question.choices[this.question.choice].value);
         this.$emit("goNext", this.question.id);
       } else {
-        alert('لطفا یک گزینه را انتخاب نمایید')
+        alert("لطفا یک گزینه را انتخاب نمایید");
       }
-      
     },
     onPrev() {
       this.$emit("goPrev", this.question.id);
