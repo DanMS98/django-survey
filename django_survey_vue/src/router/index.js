@@ -1,17 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import ParentSurvey from '../views/ParentSurvey.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'ParentSurvey',
+    component: ParentSurvey
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/child_survey',
+    name: 'ChildSurvey',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "ChildSurvey" */ '../views/ChildSurvey.vue')
   }
 ]
 

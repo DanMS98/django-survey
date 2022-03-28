@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <router-link to="/">نظرسنجی والد</router-link> |
-    <router-link to="/about">نظرسنجی فرزند</router-link>
+    <router-link to="/child_survey">نظرسنجی فرزند</router-link>
   </div>
   <router-view />
 </template>

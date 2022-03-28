@@ -14,7 +14,7 @@ import Survey_child from "../components/Survey_child.vue";
 import { getAPI } from "../axios-api";
 
 export default {
-  name: "About",
+  name: "ChildSurvey",
 
   components: {
     Survey_child,
