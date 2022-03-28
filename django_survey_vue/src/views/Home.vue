@@ -1,6 +1,5 @@
 <template>
   <div class="box home">
-
     <input
       class="input"
       v-model="childAge"
@@ -35,15 +34,61 @@ export default {
   },
 
   methods: {
-    playSound(s) {
-      if (sound) {
-        var audio = new Audio(sound);
-        audio.play();
-      }
-    },
     finishSurvey() {
       this.parentChoices = [];
+      var exception_ids = [
+        1, 2, 4, 6, 8, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 33, 35, 37,
+        47, 52, 57,
+      ];
       this.survey.forEach((element) => {
+        var score = 0;
+        if (exception_ids.includes(element.id)) {
+          switch (element.choice) {
+            case "-2":
+              score = 5;
+              break;
+            case "-1":
+              score = 4;
+              break;
+            case "0":
+              score = 3;
+              break;
+            case "1":
+              score = 2;
+              break;
+            case "2":
+              score = 1;
+              break;
+          }
+        } else {
+          switch (element.choice) {
+            case "-2":
+              score = 1;
+              break;
+            case "-1":
+              score = 2;
+              break;
+            case "0":
+              score = 3;
+              break;
+            case "1":
+              score = 4;
+              break;
+            case "2":
+              score = 5;
+              break;
+          }
+        }
+        if(element.title == "خودآگاهی هیجانی"){
+          console.log("خودآگاهی هیجانی");
+        } else if (element.title == "کنترل تکانه"){
+          console.log("کنترل تکانه");
+        } else if (element.title == "تنظیم هیجانات"){
+          console.log("تنظیم هیجانات");
+        }
+        console.log("SCORE: ", score);
+        this.parent_score += score;
+        console.log("TOTAL_SCORE: ", this.parent_score);
         this.parentChoices.push(element.choice);
       });
 
@@ -82,7 +127,6 @@ export default {
       this.survey[id - 1].isAnswered = true;
       this.survey[id - 1].isSelected = false;
       this.survey[id].isSelected = true;
-      this.audio.play();
     },
     showPrevQuestion(id) {
       if (id - 1 != 0) {
@@ -97,7 +141,9 @@ export default {
 
   data() {
     var audio;
+    var parent_score;
     return {
+      parent_score,
       audio,
       parentChoices: [],
       test: [],
@@ -111,6 +157,7 @@ export default {
   },
 
   async created() {
+    this.parent_score = 0;
     await getAPI
       .get("parent-questions/")
       .then((response) => {
@@ -142,7 +189,17 @@ export default {
       },
       {
         id: 2,
-        title: "خودآگاهی هیجانی",
+        title: "تنظیم هیجانات",
+        value: "Emotional_self-awareness2",
+        text: "وقتی یکی از دوستانش ناراحت باشد او متوجه نمیشود.",
+        isAnswered: false,
+        choice: "",
+        isLast: false,
+        isSelected: false,
+      },
+      {
+        id: 3,
+        title: "کنترل تکانه",
         value: "Emotional_self-awareness2",
         text: "وقتی یکی از دوستانش ناراحت باشد او متوجه نمیشود.",
         isAnswered: false,
@@ -152,6 +209,7 @@ export default {
       },
     ];
     this.test[this.test.length - 1].isLast = true;
+    this.survey = this.test;
   },
 };
 </script>
