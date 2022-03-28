@@ -200,6 +200,17 @@ export default {
       } else {
         this.exitementcontrol_result = this.dict.exitementcontrol_result_low;
       }
+      
+      if (this.parent_score_flexibility >= 20) {
+        this.flexibility_result = this.dict.flexibility_result_high;
+      } else if (
+        this.parent_score_flexibility < 20 &&
+        this.parent_score_flexibility > 15
+      ) {
+        this.flexibility_result_high = this.dict.flexibility_result_mid;
+      } else {
+        this.flexibility_result_high = this.dict.flexibility_result_low;
+      }
 
       if (this.childGender == "پسر") {
         this.childGenderCode = 1;
