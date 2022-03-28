@@ -134,15 +134,6 @@ export default {
         }
         this.parentChoices.push(element.choice);
       });
-      const all_scores = [
-        this.parent_score_relationship,
-        this.parent_score_problemsolvoing,
-        this.parent_score_selfawareness,
-        this.parent_score_impactcontrol,
-        this.parent_score_flexibility,
-        this.parent_score_sympathy,
-        this.parent_score_exitementcontrol,
-      ];
 
       if (this.parent_score_relationship >= 56) {
         this.relationship_result = this.dict.relationship_result_high;
@@ -409,7 +400,7 @@ export default {
       },
     ];
     this.test[this.test.length - 1].isLast = true;
-    this.survey = this.test;
+    // this.survey = this.test;
   },
 };
 </script>
