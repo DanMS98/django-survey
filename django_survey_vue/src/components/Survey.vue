@@ -13,7 +13,9 @@
       </transition>
     </div>
   </div>
-  <div v-else>با تشکر از همکاری شما</div>
+  <div v-else>با تشکر از همکاری شما
+    
+  </div>
 </template>
 
 <script>
