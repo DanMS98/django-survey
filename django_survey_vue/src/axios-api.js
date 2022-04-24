@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getAPI = axios.create({
-    baseURL: 'http://aris.ut.ac.ir:57742',
+    baseURL: 'http://aris.ut.ac.ir/autsbackend',
     timeout: 5000,
 })
 
