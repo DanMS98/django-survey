@@ -207,9 +207,9 @@ export default {
         this.parent_score_flexibility < 20 &&
         this.parent_score_flexibility > 15
       ) {
-        this.flexibility_result_high = this.dict.flexibility_result_mid;
+        this.flexibility_result = this.dict.flexibility_result_mid;
       } else {
-        this.flexibility_result_high = this.dict.flexibility_result_low;
+        this.flexibility_result = this.dict.flexibility_result_low;
       }
 
       if (this.childGender == "پسر") {
