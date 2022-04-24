@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3@t*#^w$3$5nb5syj9!(ua58=j@j7hx!n!pq8l_qlye28$lb7j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -49,7 +49,9 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8080'
+    'http://localhost:8080',
+    'http://aris.ut.ac.ir/',
+    'http://aris.ut.ac.ir/auts'
 ]
 
 MIDDLEWARE = [
