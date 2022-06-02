@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
-    <router-link to="/">نظرسنجی والد</router-link> |
-    <router-link to="/child_survey">نظرسنجی فرزند</router-link>
+    <router-link to="/">پرسشنامه هوش هیجانی(فرم والد)</router-link> |
+    <router-link to="/child_survey">پرسشنامه هوش هیجانی(فرم کودک)</router-link> |
+    <router-link to="/about">درباره ما</router-link>
   </div>
   <router-view />
 </template>

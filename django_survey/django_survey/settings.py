@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3@t*#^w$3$5nb5syj9!(ua58=j@j7hx!n!pq8l_qlye28$lb7j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
-    'http://aris.ut.ac.ir',
 
 ]
 
@@ -134,7 +133,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 # media_addr = 'http://aris.ut.ac.ir/autsbackend'
-BASE_DIR = 'http://aris.ut.ac.ir/autsbackend'
+# BASE_DIR = 'http://aris.ut.ac.ir/autsbackend'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'

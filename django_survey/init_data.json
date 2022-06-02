@@ -4,7 +4,7 @@
 
         "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness1",
-        "text": "بیشتر اوقات فرزندم متوجه نمیشود چه احساسی دارد"
+        "text": "احساسات دیگران را می فهمد."
 
       }},
 
@@ -13,7 +13,7 @@
 
         "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness2",
-        "text": "وقتی یکی از دوستانش ناراحت باشد او متوجه نمیشود."
+        "text": "درک احساسات دیگران برایش دشوار است."
 
       }},
 
@@ -22,7 +22,7 @@
 
         "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness3",
-        "text": "دقيقا مى داند چه احساسى دارد."
+        "text": "فرزندم اغلب اوقات نق می زند یا شکایت می کند.\n"
 
       }},
 
@@ -31,52 +31,52 @@
 
         "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness4",
-        "text": "احساسات دیگران را میفهمد"
+        "text": "به راحتی میتواند به چیزهای جدید عادت کند.\n"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 5, "fields":
       {
 
-        "title": "تنظیم هیجانات",
+        "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness5",
-        "text": "درك احساسات ديگران برايش دشوار است."
+        "text": "عادت کردن به سال تحصیلی برایش دشوار است."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 6, "fields":
       {
 
-        "title": "حل مسئله",
+        "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness6",
-        "text": "عصبانیت دیگران را تشخیص میدهد."
+        "text": "وقتی در محل جدید باشد به سرعت به آن عادت می کند.\n"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 7, "fields":
       {
 
-        "title": "حل مسئله",
+        "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness7",
-        "text": "احساسات خود را به سادگی درک میکند."
+        "text": "دوست ندارد به کارهای جدید دست بزند."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 8, "fields":
       {
 
-        "title": "حل مسئله",
+        "title": "خودآگاهی هیجانی",
         "value": "Emotional_self-awareness8",
-        "text": "بیشتر مواقع درمورد درک احساسی که دارد ناتوان است"
+        "text": "او شنونده ی خوبی برای دیگران است."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 9, "fields":
       {
 
-        "title": "انعطاف پذیری",
+        "title": "حل مسئله ",
         "value": "Emotional_self-awareness9",
-        "text": "بیشتر مواقع احساس ناراحتی میکند ولی علت آن را نمیداند."
+        "text": "بیشتر مواقع احساس ناراحتی می کند ولی علت آن را نمی داند."
 
       }},
 
@@ -85,7 +85,7 @@
 
         "title": "حل مسئله",
         "value": "Emotional_self-awareness10",
-        "text": "زمانی که چیزی او را ناراحت میکند نمیتواند تشخیص دهد."
+        "text": "زمانی که چیزی او را ناراحت می کند، نمی تواند تشخیص دهد.\n"
 
       }},
 
@@ -94,7 +94,7 @@
 
         "title": "حل مسئله",
         "value": "Emotional_self-awareness11",
-        "text": "صحبت کردن درمورد اینکه  چه احساسی دارد برایش سخت است."
+        "text": "صحبت کردن در مورد اینکه چه احساسی دارد برایش سخت است."
 
       }},
 
@@ -103,116 +103,114 @@
 
         "title": "حل مسئله",
         "value": "Emotional_self-awareness12",
-        "text": "هیچ توچهی به هیجانات دیگران ندارد"
+        "text": "همیشه سعی دارد بهترین اخلاق را داشته باشد.\n"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 13, "fields":
       {
 
-        "title": "انعطاف پذیری",
+        "title": "حل مسئله",
         "value": "EmotionRegulation_1",
-        "text": "وقتی غمگین باشد سعی می کند خود را مشغول کند"
+        "text": "اگر در امتحانی موفق نشود، در امتحان بعدی سخت تر تلاش می کند."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 14, "fields":
       {
 
-        "title": "روابط با همسالان",
+        "title": "حل مسئله",
         "value": "EmotionRegulation_2",
-        "text": " .همیشه سعی دارد بهترین اخلاق را داشته باشد"
+        "text": "در کنترل احساسات خود موفق است."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 15, "fields":
       {
 
-        "title": "کنترل تکانه",
+        "title": "حل مسئله",
         "value": "EmotionRegulation_3",
-        "text": "وقتی ناراحت باشد سعی می کند خود را خوشحال نشان دهد"
+        "text": "هنگامی که ناراحت یا عصبانی است سعی می کند دلیل آن را بفهمد.\n"
       }},
 
  {"model": "survey_app.parentquestions", "pk": 16, "fields":
       {
 
-        "title": "کنترل تکانه",
+        "title": "حل مسئله",
         "value": "EmotionRegulation_4",
-        "text": " .اگر در امتحانی موفق نشود، در امتحان بعدی سخت تر تلاش می کند. "
+        "text": "با تحلیل احساسات خود، سعی می کند دلیل اتفاقاتی که برایش افتاده را پیدا کند."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 17, "fields":
       {
 
-        "title": "کنترل تکانه",
+        "title": "حل مسئله",
         "value": "EmotionRegulation_5",
-        "text": " .در کنترل احساسات خود موفق است."
+        "text": "همیشه می خواهد دلیل اینکه چرا احساسات بدی داشته را پیدا کند."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 18, "fields":
       {
 
-        "title": "کنترل تکانه",
+        "title": "حل مسئله",
         "value": "EmotionRegulation_6",
-        "text": "می تواند هیجاناتش را کنترل کند"
+        "text": "در شرایط استرس زا یک راهی پیدا می کند تا خود را آرام کند."
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 19, "fields":
       {
 
-        "title": "تنظیم هیجانات",
+        "title": "حل مسئله",
         "value": "EmotionRegulation_7",
-        "text": ".بی دلیل هیجان زده نمی شود یا از شدت هیجان اشک در چشمانش حلقه نمی زند. "
+        "text": "به طور موثر تعارض و مشکلات را حل می کند. "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 20, "fields":
       {
+         "title": "حل مسئله",
         "value": "ImpactControl_1",
-        "text": " .هر چیزی که بخواهد، بلافاصله باید به آن برسد.",
-        "title": "تنظیم هیجانات"
-
+        "text": "وقتی از مشکلات دیگران باخبر شود، به سرعت راه حل های مختلفی به ذهن آن خطور می کند."
       }},
 
  {"model": "survey_app.parentquestions", "pk": 21, "fields":
       {
         "value": "ImpactControl_2",
-        "text": "دوست ندارد برای چیزی که می خواهد منتظر بماند",
-        "title": "تنظیم هیجانات"
-
+        "text": "می تواند رسیدن به خواسته های خود را به تاخیر بیندازد و منتظر بماند تا به خواسته هایش برسد.",
+        "title": "حل مسئله"
       }},
 
  {"model": "survey_app.parentquestions", "pk": 22, "fields":
       {
         "value": "ImpactControl_3",
-        "text": "هرکاری را که بخواهد انجام می دهد بدون اینکه در مورد آن فکر کند.",
-        "title": "تنظیم هیجانات"
+        "text": "وقتی مجبور باشد کاری را انجام دهد، دچار خشم و عصبانیت می شود.",
+        "title": "حل مسئله"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 23, "fields":
       {
         "value": "ImpactControl_4",
-        "text": " .خیلی وقت ها قبل از انجام دادن کارها فکر نمی کند.",
-        "title": "کنترل تکانه"
+        "text": "اکثر اوقات می تواند مسائل را از دید دیگران نگاه کند.",
+        "title": "حل مسئله"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 24, "fields":
       {
         "value": "ImpactControl_5",
-        "text": " .در موقعیت تعارض با همساالن خشم خود را کنترل می کند",
-        "title": "کنترل تکانه"
+        "text": "فرزندم دوستی را که رنجیده باشد کمک می کند.\n",
+        "title": "حل مسئله"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 25, "fields":
       {
         "value": "ImpactControl_6",
-        "text": "فرزندم به آسانی عصبانی می شود.",
+        "text": "هر چیزی که بخواهد، بلافاصله باید به آن برسد.",
         "title": "کنترل تکانه"
 
       }},
@@ -220,40 +218,40 @@
  {"model": "survey_app.parentquestions", "pk": 26, "fields":
       {
         "value": "ImpactControl_7",
-        "text": "فرزندم اغلب اوقات نق می زند یا شکایت می کند. ",
-        "title": "حل مسئله"
+        "text": "دوست ندارد برای چیزی که می خواهد منتظر بماند.\n",
+        "title": "کنترل تکانه"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 27, "fields":
       {
         "value": "ImpactControl_8",
-        "text": "فرزندم وقتی عصبانی می شود دیگران را کتک می زند. ",
-        "title": "حل مسئله"
+        "text": "هرکاری را که بخواهد انجام می دهد بدون اینکه در مورد آن فکر کند.",
+        "title": "کنترل تکانه"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 28, "fields":
       {
         "value": "ImpactControl_9",
-        "text": "وسط حرف دیگران می پرد و حرفشان را قطع می کند",
-        "title": "حل مسئله"
+        "text": "خیلی وقت ها قبل از انجام دادن کارها فکر نمی کند.",
+        "title": "کنترل تکانه"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 29, "fields":
       {
         "value": "ImpactControl_10",
-        "text": " .عادت های تکانشی دارد که نمی تواند جلوی آن ها را بگیرد. ",
-        "title": "حل مسئله"
+        "text": "وسط حرف دیگران می پرد و حرفشان را قطع می کند.",
+        "title": "کنترل تکانه"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 30, "fields":
       {
         "value": "ImpactControl_11",
-        "text": ".قبل از تصمیم گیری، راه حل های مختلف را در نظر می گیرد",
-        "title": "حل مسئله"
+        "text": "قبل از تصمیم گیری، راه حل های مختلف را در نظر می گیرد.",
+        "title": "کنترل تکانه"
 
       }},
 
@@ -261,125 +259,125 @@
       {
         "value": "ImpactControl_12",
         "text": "رفتار یا گفتتاری از او سر می زند که باعث پشیمانی او می شود. ",
-        "title": "حل مسئله"
+        "title": "کنترل تکانه"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 32, "fields":
       {
         "value": "ProblemSolving_1",
-        "text": "هنگامی که ناراحت یا عصبانی است سعی می کند دلیل آن را بفهمد",
-        "title": "خودآگاهی"
+        "text": "وقتی غمگین باشد سعی می کند خود را مشغول کند",
+        "title": "انعطاف پذیری "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 33, "fields":
       {
         "value": "ProblemSolving_2",
-        "text": " .با تحلیل احساسات خود، سعی می کند دلیل اتفاقاتی که برایش افتاده را پیدا کند.",
-        "title": "خودآگاهی"
+        "text": "می تواند هیجاناتش را کنترل کند. ",
+        "title": "انعطاف پذیری "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 34, "fields":
       {
         "value": "ProblemSolving_3",
-        "text": "همیشه می خواهد دلیل اینکه چرا احساسات بدی داشته را پیدا کند",
-        "title": "خودآگاهی"
+        "text": "دوست دارد چیزهای جدیدی یاد بگیرد.",
+        "title": "انعطاف پذیری "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 35, "fields":
       {
         "value": "ProblemSolving_4",
-        "text": "در شرایط استرس زا یک راهی پیدا می کند تا خود را آرام کند.",
-        "title": "خودآگاهی"
+        "text": "در مواجه با اتفاقات انعطاف پذیر عمل می کند. ",
+        "title": "انعطاف پذیری "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 36, "fields":
       {
         "value": "ProblemSolving_5",
-        "text": "معموال مشکلاتش را خودش حل می کند",
-        "title": "حل مسئله"
+        "text": "از ناراحتی دیگران احساس ناراحتی می کند.",
+        "title": "انعطاف پذیری "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 37, "fields":
       {
         "value": "ProblemSolving_6",
-        "text": "به طور موثر تعارض و مشکلات را حل می کند",
-        "title": "حل مسئله"
+        "text": "دیگران را به خوبی درک می کند.",
+        "title": "همدلی"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 38, "fields":
       {
         "value": "ProblemSolving_7",
-        "text": "وقتی از مشکلات دیگران باخبر شود، به سرعت راه حل های مختلفی به ذهن آن خطور می کند. ",
-        "title": "انعطاف پذیری"
+        "text": "براساس درک احساسات و نیازهای دیگران به آن ها کمک می کند.\n",
+        "title": "همدلی"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 39, "fields":
       {
         "value": "flexibility_1",
-        "text": "به راحتی میتواند به چیزهای جدید عادت کند.",
-        "title": "انعطاف پذیری"
+        "text": "دوستان زیادی دارد.",
+        "title": "همدلی"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 40, "fields":
       {
         "value": "flexibility_2",
-        "text": "عادت کردن به سال تحصیلی برایش دشوار است. ",
-        "title": "انعطاف پذیری"
+        "text": "احساسات خود را به سادگی درک می کند.\n",
+        "title": "تنظیم هیجان "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 41, "fields":
       {
         "value": "flexibility_3",
-        "text": "وقتی در محل جدید باشد به سرعت به آن عادت می کند. ",
-        "title": "حل مسئله"
+        "text": "در موقعیت تعارض با همسالان خشم خود را کنترل می کند.\n",
+        "title": "تنظیم هیجان "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 42, "fields":
       {
         "value": "flexibility_4",
-        "text": " .دوست ندارد به کارهای جدید دست بزند. ",
-        "title": "حل مسئله"
+        "text": "فرزندم به آسانی عصبانی می شود. \n",
+        "title": "تنظیم هیجان "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 43, "fields":
       {
         "value": "flexibility_5",
-        "text": "می تواند رسیدن به خواسته های خود را به تاخیر بیندازد و منتظر بماند تا به خواسته هایش برسد.",
-        "title": "خودآگاهی"
+        "text": "فرزندم اغلب اوقات نق می زند یا شکایت می کند.",
+        "title": "تنظیم هیجان "
       }},
 
  {"model": "survey_app.parentquestions", "pk": 44, "fields":
       {
         "value": "flexibility_6",
-        "text": "وقتی مجبور باشد کاری را انجام دهد، دچار خشم و عصبانیت می شود.",
-        "title": "همدلی"
+        "text": "فرزندم وقتی عصبانی می شود دیگران را کتک می زند.",
+        "title": "تنظیم هیجان "
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 45, "fields":
       {
         "value": "flexibility_7",
-        "text": " .دوست دارد چیزهای جدیدی یاد بگیرد",
-        "title": "همدلی"
+        "text": "بی دلیل هیجان زده نمی شود یا از شدت هیجان اشک در چشمانش حلقه نمی زند.\n",
+        "title": "روابط با همسالان"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 46, "fields":
       {
         "value": "flexibility_8",
-        "text": "در مواجه با اتفاقات انعطاف پذیر عمل می کند. ",
+        "text": "خیلی راحت دوست پیدا می کند. ",
         "title": "روابط با همسالان"
 
       }},
@@ -387,7 +385,7 @@
  {"model": "survey_app.parentquestions", "pk": 47, "fields":
       {
         "value": "Sympathy_1",
-        "text": "فرندم دوستش را که غمگین است، دلداری میدهد.",
+        "text": "دوست ندارد با بچه هایی که نمی شناسد حرف بزند. \n",
         "title": "روابط با همسالان"
 
       }},
@@ -395,15 +393,15 @@
  {"model": "survey_app.parentquestions", "pk": 48, "fields":
       {
         "value": "Sympathy_2",
-        "text": "فرزندم دوستی را که رنجیده باشد کمک می کند.",
-        "title": "همدلی"
+        "text": "دوست دارد افراد جدید را ببیند. ",
+        "title": "روابط با همسالان"
 
       }},
 
  {"model": "survey_app.parentquestions", "pk": 49, "fields":
       {
         "value": "Sympathy_3",
-        "text": " .او شنونده ی خوبی برای دیگران است",
+        "text": "دوست دارد با دیگران باشد.",
         "title": "روابط با همسالان"
 
       }},
@@ -411,7 +409,7 @@
  {"model": "survey_app.parentquestions", "pk": 50, "fields":
       {
         "value": "Sympathy_4",
-        "text": "می تواند با دیگران همدردی کند.",
+        "text": "با همه کنار می آید.",
         "title": "روابط با همسالان"
 
       }},
@@ -419,7 +417,7 @@
  {"model": "survey_app.parentquestions", "pk": 51, "fields":
       {
         "value": "Sympathy_5",
-        "text": " .دیگران را به خوبی درک می کند. ",
+        "text": "اغلب با دیگران دعوا می کند. ",
         "title": "روابط با همسالان"
 
       }},
@@ -427,7 +425,7 @@
  {"model": "survey_app.parentquestions", "pk": 52, "fields":
       {
         "value": "Sympathy_6",
-        "text": "براساس درک احساسات و نیازهای دیگران به آن ها کمک می کند.",
+        "text": "دیگران بازی کردن با او را دوست دارند. ",
         "title": "روابط با همسالان"
 
       }},
@@ -435,7 +433,7 @@
  {"model": "survey_app.parentquestions", "pk": 53, "fields":
       {
         "value": "PeersRelationships_1",
-        "text": "حیلی راحت دوست پیدا می کند. ",
+        "text": "با همکلاسی هایش همکاری و مشارکت می کند. ",
         "title": "روابط با همسالان"
 
       }},
@@ -443,7 +441,7 @@
  {"model": "survey_app.parentquestions", "pk": 54, "fields":
       {
         "value": "PeersRelationships_2",
-        "text": "دوست ندارد با بچه هایی که نمی شناسد حرف بزند. ",
+        "text": "در صحبت با همسالان پیش قدم می شود. ",
         "title": "روابط با همسالان"
 
       }},
@@ -451,7 +449,7 @@
  {"model": "survey_app.parentquestions", "pk": 55, "fields":
       {
         "value": "PeersRelationships_3",
-        "text": "دوستان زیادی دارد. ",
+        "text": "در بازی های گروهی به خوبی با دیگران کنار می آید. ",
         "title": "روابط با همسالان"
 
       }},
@@ -459,7 +457,7 @@
  {"model": "survey_app.parentquestions", "pk": 56, "fields":
       {
         "value": "PeersRelationships_4",
-        "text": "دوست دارد افراد جدید را ببیند. ",
+        "text": "دوست دارد تنها بازی کند.  ",
         "title": "روابط با همسالان"
 
       }},
@@ -467,7 +465,7 @@
  {"model": "survey_app.parentquestions", "pk": 57, "fields":
       {
         "value": "PeersRelationships_5",
-        "text": "دوست دارد با دیگران باشد. ",
+        "text": "فرزندم می داند که چطور دوست پیدا کند.  ",
         "title": "روابط با همسالان"
 
       }},
@@ -475,91 +473,11 @@
  {"model": "survey_app.parentquestions", "pk": 58, "fields":
       {
         "value": "PeersRelationships_6",
-        "text": "با همه کنار می آید. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 59, "fields":
-      {
-        "value": "PeersRelationships_7",
-        "text": ".اغلب با دیگران دعوا می کند. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 60, "fields":
-      {
-        "value": "PeersRelationships_8",
-        "text": ".دیگران بازی کردن با او را دوست دارند. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 61, "fields":
-      {
-        "value": "PeersRelationships_9",
-        "text": "با همکالسی هایش همکاری و مشارکت می کند. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 62, "fields":
-      {
-        "value": "PeersRelationships_10",
-        "text": "در صحبت با همساالن پیش قدم می شود. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 63, "fields":
-      {
-        "value": "PeersRelationships_11",
-        "text": ".با دوستان خود همکاری می کند. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 64, "fields":
-      {
-        "value": "PeersRelationships_12",
-        "text": ".در بازی های گروهی به خوبی با دیگران کنار می آید. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 65, "fields":
-      {
-        "value": "PeersRelationships_13",
-        "text": " .دوست دارد تنها بازی کند. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 66, "fields":
-      {
-        "value": "PeersRelationships_14",
-        "text": ".فرزندم می داند که چطور دوست پیدا کند. ",
-        "title": "روابط با همسالان"
-
-      }},
-
- {"model": "survey_app.parentquestions", "pk": 67, "fields":
-      {
-        "value": "PeersRelationships_15",
         "text": "در بازی های گروهی شرکت می کند. ",
         "title": "روابط با همسالان"
 
       }},
 
- {"model": "survey_app.parentquestions", "pk": 68, "fields":
-      {
-        "value": "",
-        "text": "",
-        "title": ""
-
-      }
- },
 
   {"model": "survey_app.childquestion", "pk": 0, "fields":
       {
@@ -1137,17 +1055,6 @@
     "value2": 2,
     "answer2": " ﺍﺯﺵ ﻣﻲ ﭘﺮﺳﻢ ﺩﻭﺳﺖ ﺩﺍﺭﻩ ﺑﺎ ﻫﻢ ﺩﻭﺳﺖ ﺑﺸﻴﻢ",
     "audio": "uploads/49.mp4"
-  }},
-  {"model": "survey_app.childquestion", "pk": 50, "fields": {
-    "title": "مهارت های اجتماعی",
-    "text": " ﺩﻟﺖ ﻣﻴﺨﻮﺍﺩ ﻭﻗﺘﻲ ﻣﻴﺮﻳﻦ ﺳﻔﺮ ﺧﺎﻟﻪ ﻭ ﺩﺍﻳﻲ ﻭ ﻋﻤﻪ ﻭ ﻋﻤﻮ ﻭ ﻫﻤﻪ ﺑﺎ ﺷﻤﺎ ﺑﻴﺎﻥ ﺳﻔﺮ؟",
-    "value0": 0,
-    "answer0": "ﺩﻭﺳﺖ ﺩﺍﺭﻡ ﺗﻨﻬﺎ ﺑﺎ ﻣﺎﻣﺎﻥ ﻭ ﺑﺎﺑﺎﻡ ﺑﺮﻡ ﺳﻔﺮ",
-    "value1": 2,
-    "answer1": " ﺩﻭﺳﺖ ﺩﺍﺭﻡ ﺁﻥ ﻫﺎ ﻫﻢ ﻫﻤﺮﺍﻩ ﻣﺎ ﺑﻴﺎﻳﻨﺪ ",
-    "value2": 1,
-    "answer2":  " ﺩﻭﺳﺖ ﺩﺍﺭﻡ ﺑﺎ ﺗﻌﺪﺍﺩﻱ ﺍﺯ ﺁﻥ ﻫﺎ ﺑﺮﻳﻢ ﺳﻔﺮ",
-    "audio": "uploads/50.mp4"
   }},
   {"model": "survey_app.childquestion", "pk": 51, "fields": {
     "title": "سازگاری",

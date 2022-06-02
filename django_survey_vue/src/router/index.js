@@ -8,6 +8,11 @@ const routes = [
     component: ParentSurvey
   },
   {
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "ChildSurvey" */ '../views/About.vue')
+  },
+  {
     path: '/child_survey', 
     name: 'ChildSurvey',
 
